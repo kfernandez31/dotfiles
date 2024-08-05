@@ -1,0 +1,127 @@
+[include]
+  path = ~/.config/delta/themes/mocha.gitconfig
+
+[user]
+  name  = kfernandez31
+  email = kacper.fernandez@proton.me
+
+[core]
+  pager = delta
+
+[delta]
+  navigate                    = true
+  side-by-side                = true
+  true-color                  = always
+  features                    = catppuccin-mocha
+  hyperlinks                  = true
+  hyperlinks-file-link-format = "vscode://file/{path}:{line}" # TODO: configure for nvim
+
+[interactive]
+  diffFilter = delta --color-only
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
+[alias]
+  # log
+  lol  = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+  lola = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all
+  lols = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat
+  # add
+  a   = add
+  aa  = add --all
+  ap  = add --patch
+  au  = add --update
+  aap = add --all --patch
+  aau = add --all --update
+  # branch
+  ba  = branch --all
+  bd  = branch --delete
+  bdf = branch --delete --force
+  bm  = branch --move
+  bn  = branch --no-merged
+  br  = branch --remote
+  # checkout
+  co = checkout
+  cb = checkout -b
+  # diff
+  d  = diff
+  ds = diff --staged
+  dH = diff HEAD
+  # cherry-pick
+  cp  = cherry-pick
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
+  # clean
+  cl  = clean
+  clx = clean -x
+  # commit
+  c     = commit --verbose
+  # ca    = commit --verbose --all
+  cm    = commit --verbose --message
+  # cam   = commit --verbose --all --message
+  cane  = commit --verbose --amend --no-edit 
+  # caane = commit --verbose --amend --all --no-edit 
+  # init
+  i = init
+  # merge
+  m  = merge
+  ma = merge --abort
+  mc = merge --continue
+  # pull
+  pl   = pull
+  plv  = pull --verbose 
+  plr  = pull --rebase --verbose
+  plra = pull --rebase --verbose --autostash
+  # push
+  ps     = push
+  psd    = push --dry-run
+  psf    = push --force-with-lease --force-if-includes
+  pssupo = push --set-upstream origin $(git_current_branch)
+  psod   = push origin --delete
+  # rebase
+  rb  = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase --interactive
+  rbs = rebase --skip
+  rbm = rebase $(git_main_branch)
+  # remote
+  rv   = remote --verbose
+  ra   = remote add
+  rrm  = remote remove
+  rmv  = remote rename
+  rset = remote set-url
+  rup  = remote update
+  # reset
+  res  = reset
+  resH = reset HEAD
+  # restore
+  rs = restore --staged
+  # rm
+  rmc = rm --cached -rf
+  # show
+  sh = show --pretty=short --show-signature
+  # status
+  st  = status
+  sts = status --short --branch
+  # submodule
+  si = submodule init
+  su = submodule update
+  # stash
+  sta  = stash apply
+  stc  = stash clear
+  std  = stash drop
+  stp  = stash push
+  stpa = stash push --all
+  stpu = stash push --include-untracked
+  stsp = stash show --patch
+  stl  = stash list
+
+  # extras!
+
+  # search
+  se = !git rev-list --all | xargs git grep -F

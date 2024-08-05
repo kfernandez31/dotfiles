@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# Reload config
+alias s="source $HOME/.zshenv ; source $XDG_CONFIG_HOME/zsh/.zprofile ; source $XDG_CONFIG_HOME/zsh/.zshrc"
+
+# Unix command replacements
+alias cd='z'
+alias cat='bat'
+alias diff='delta'
+alias du='dust -r'
+alias less='bat --paging=always'
+
+# ls
+alias ls='eza -h --group-directories-first --git --time-style=long-iso --no-user --color-scale'
+alias la='ls -a'
+alias ll='ls -l'
+alias lf='ls --icons -F'
+alias lt='ls --icons -F -T --level=2'
+alias lla='ls -la'
+alias lfa='ls --icons -F -a'
+alias lta='ls --icons -F -a -T --level=2'
+
+# Additional flags
+alias rm='rm -iv'
+alias cp='cp -riv'
+alias mv='mv -iv'
+alias mkdir='mkdir -pv'
+alias rmdir='rmdir -v'
+alias df='df -h'
+alias du='du -hc'
+alias ping='ping -c 5'
+alias grep='grep --color=auto'
+alias clear='clear -x'
+alias rsync='rsync -vrPlu'
+alias ffmpeg='ffmpeg -hide_banner'
+alias ip='ip -color=auto'
+
+# Shorthands
+alias ka='killall'
+alias g='git'
+alias c='clear -x'
+alias md='mkdir'
+alias rd='rmdir'
+alias tl='tail'
+alias hd='head'
+alias ff='fastfetch'
+alias py='python3'
+alias findf='find . -type f -name'
+alias findd='find . -type d -name'
+alias val='valgrind --error-exitcode=123 --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all -s --track-origins=yes'
+alias yt='yt-dlp --embed-metadata -i'
+alias yta='yt -x -f bestaudio/best'
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+# Dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+
+# Vim
+[ -x "$(command -v nvim)" ] && alias vi='nvim' vim='nvim' vimdiff='nvim -d'
