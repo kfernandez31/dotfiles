@@ -59,7 +59,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 # Dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias cfg='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 # Vim
 [ -x "$(command -v nvim)" ] && alias vi='nvim' vim='nvim' vimdiff='nvim -d'

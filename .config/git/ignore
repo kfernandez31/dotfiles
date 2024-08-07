@@ -1,10 +1,9 @@
 *history*
 *cache*
-# TODO:
-.config/nvim
+**/.DS_Store
 .config/zsh/.zsh_sessions
 .config/raycast
-.config/iterm2
+.config/nvim
 # TODO: remove the lines below:
 .config/mise
 .config/brazil

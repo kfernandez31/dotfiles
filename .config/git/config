@@ -27,6 +27,7 @@
 
 [alias]
   # log
+  l    = log
   lol  = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
   lola = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all
   lols = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat
@@ -38,6 +39,7 @@
   aap = add --all --patch
   aau = add --all --update
   # branch
+  b   = branch
   ba  = branch --all
   bd  = branch --delete
   bdf = branch --delete --force
@@ -60,11 +62,13 @@
   clx = clean -x
   # commit
   c     = commit --verbose
-  # ca    = commit --verbose --all
+  ca    = commit --verbose --all
   cm    = commit --verbose --message
-  # cam   = commit --verbose --all --message
-  cane  = commit --verbose --amend --no-edit 
-  # caane = commit --verbose --amend --all --no-edit 
+  cam   = commit --verbose --all --message
+  cane  = commit --verbose --amend --no-edit
+  caane = commit --verbose --amend --all --no-edit
+  # fetch
+  f = fetch
   # init
   i = init
   # merge
@@ -120,6 +124,8 @@
   stpu = stash push --include-untracked
   stsp = stash show --patch
   stl  = stash list
+  # switch
+  sw = switch
 
   # extras!
 
