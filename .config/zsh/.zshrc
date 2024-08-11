@@ -20,6 +20,7 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
+zinit light hlissner/zsh-autopair
 
 # Snippets
 zinit snippet OMZP::sudo
@@ -93,6 +94,12 @@ fi
 # TODO: remove the lines below
 eval "$(mise activate zsh)"
 source ~/.brazil_completion/zsh_completion
+
+# TODO: run these but once. Maybe just add as login items? 
+# skhd --start-service
+# yabai --start-service
+# brew services start borders
+# brew services start sketchybar
 
 # TODO:
 # session_name="main"

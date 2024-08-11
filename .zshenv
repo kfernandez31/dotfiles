@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# adds `~/.local/bin` to $PATH
-# export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
-
 # xdg-ninja
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -56,8 +53,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # paging
 export MANPAGER='nvim +Man!'
-export DELTA_PAGER='less --mouse'
-export ZINIT_HOME="$XDG_DATA_HOME"/zinit.git
+# export PAGER='less -irRSx4'
 
 # TODO: remove
 # sqlite

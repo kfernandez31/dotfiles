@@ -1,29 +1,56 @@
 [include]
-  path = ~/.config/delta/themes/mocha.gitconfig
+  path = ~/.config/delta/themes.gitconfig
 
 [user]
   name  = kfernandez31
-  email = kacper.fernandez@proton.me
+  email = k66901783+kfernandez31@users.noreply.github.com
 
 [core]
-  pager = delta
+  untrackedCache = true
+  autocrlf       = input
+  editor         = $EDITOR
+  pager          = delta \
+    --pager='less --mouse' 
+    ; --diff-so-fancy --line-numbers
 
 [delta]
+  features = fzf line-numbers decorations diff-so-fancy
+  ; syntax-theme                = "Catppuccin Mocha"
   navigate                    = true
-  side-by-side                = true
+  side-by-side                = false
   true-color                  = always
-  features                    = catppuccin-mocha
   hyperlinks                  = true
   hyperlinks-file-link-format = "vscode://file/{path}:{line}" # TODO: configure for nvim
+  ; minus-style = red bold ul "#ffeeee"
+  ; minus-style = normal bold normal 
+
+[color]
+  ui = auto
 
 [interactive]
   diffFilter = delta --color-only
 
+[init]
+  defaultBranch = main
+
 [merge]
   conflictstyle = diff3
 
+[push]
+  autoSetupRemote = true
+
+[pull]
+  rebase = true
+
 [diff]
   colorMoved = default
+
+[stash]
+	showDiff = true
+	showPatch = true
+
+[help]
+  autocorrect = 1
 
 [alias]
   # log

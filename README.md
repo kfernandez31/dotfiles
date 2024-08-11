@@ -2,6 +2,23 @@
 
 These are my dotfiles setup as a bare git repo.
 
+# Fonts
+
+Currently using either of these:
+- JetBrainsMono Nerd Font Mono
+- FiraCode Nerd Font Mono
+- ZedMono Nerd Font (variant of Iosevka)
+
+# Themes
+
+Currently trying out:
+- Gruvbox
+- Rosepine
+- Kanagawa
+- Tokyonight
+- Everforest
+
+
 # TODOs
 
 Things I still want to do to make this an even better setup:
