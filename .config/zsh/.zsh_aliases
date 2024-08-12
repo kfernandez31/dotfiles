@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Reload config
-alias s="source $HOME/.zshenv ; source $XDG_CONFIG_HOME/zsh/.zprofile ; source $XDG_CONFIG_HOME/zsh/.zshrc"
+alias s="source $HOME/.zshenv ; source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zprofile ; source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zshrc"
 
 # Unix command replacements
 alias cd='z'
@@ -11,14 +11,14 @@ alias du='dust -r'
 alias less='bat --paging=always'
 
 # ls
-alias ls='eza -h --group-directories-first --git --time-style=long-iso --no-user --color-scale'
-alias la='ls -a'
-alias ll='ls -l'
-alias lf='ls --icons -F'
-alias lt='ls --icons -F -T --level=2'
-alias lla='ls -la'
-alias lfa='ls --icons -F -a'
-alias lta='ls --icons -F -a -T --level=2'
+alias l='eza -h --group-directories-first --git --time-style=long-iso --no-user --color-scale'
+alias la='l -a'
+alias ll='l -l'
+alias lf='l --icons -F'
+alias lt='l --icons -F -T --level=2'
+alias lla='l -la'
+alias lfa='l --icons -F -a'
+alias lta='l --icons -F -a -T --level=2'
 
 # Additional flags
 alias rm='rm -iv'
@@ -59,7 +59,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 # Dotfiles
-alias cfg='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias cfg='/usr/bin/git --git-dir=${DOTFILES_HOME:-$HOME/.dotfiles} --work-tree=$HOME'
 
 # Vim
 [ -x "$(command -v nvim)" ] && alias vi='nvim' vim='nvim' vimdiff='nvim -d'

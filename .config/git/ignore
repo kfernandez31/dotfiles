@@ -4,6 +4,7 @@
 .config/zsh/.zsh_sessions
 .config/raycast
 .config/nvim
+.config/spicetify
 # TODO: remove the lines below:
 .config/mise
 .config/brazil

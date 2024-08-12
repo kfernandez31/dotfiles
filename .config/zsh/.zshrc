@@ -115,3 +115,5 @@ source ~/.brazil_completion/zsh_completion
 # else
 #     tmux switch-client -t "$session_name"
 # fi
+
+export PATH=$PATH:/Users/kkramarz/.spicetify

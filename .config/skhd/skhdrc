@@ -98,10 +98,16 @@
 # .load "partial_skhdrc"
 
 # prevent skhd from monitoring events for specific applications.
+# TODO: doesn't work
+# .blacklist [
+#    "Raycast"
+#    "Raycast Helper (Extensions)"
+#    "Signal"
+# ]
 
-.blacklist [
-   "Raycast"
-]
+:: passthrough
+cmd + alt - p ; passthrough
+passthrough < cmd + alt - p ; default
 
 # Changing Window focus
 

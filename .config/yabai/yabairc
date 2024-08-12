@@ -48,8 +48,9 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Shottr$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off
 
-# TODO: hide menu bar
+# hide menu bar
 # yabai -m config menubar_opacity 0.0
 
 # TODO:
