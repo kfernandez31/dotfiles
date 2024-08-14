@@ -1,9 +1,30 @@
-#!/bin/sh
+#!/bin/zsh
 
 # Make a directory and immediately navigate to it
 function take() {
     local DIR=$1
     mkdir -p $DIR && cd $DIR
+}
+
+# Pipe help to the manpager if it's not done by default
+function myhelp() {
+    cmd=$1
+    if ! type "$cmd" &> /dev/null; then
+        echo "'$cmd' command not found."
+    else
+        if ! alias "$cmd" &> /dev/null; then
+            if "$@" --help &> /dev/null; then
+                IFS=' ' read -r manpager_cmd manpager_args <<< "$MANPAGER"
+                "$manpager_cmd" $manpager_args < <("$@" --help)
+            else
+                echo "'$cmd' does not support '--help'."
+            fi
+        else
+            cmd_alias=$(alias "$cmd" | sed -E "s/.*='([^']*)'.*/\1/")
+            cmd_arr=( ${(Q)${(z)cmd_alias}} )
+            help "${cmd_arr[@]}"
+        fi
+    fi
 }
 
 # Delete all merged branches

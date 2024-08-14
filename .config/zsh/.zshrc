@@ -61,27 +61,6 @@ bindkey '^[w'  kill-region
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Completions
-zstyle ':completion:**' use-cache on
-if [[ -n "$XDG_CACHE_HOME" && -d "$XDG_CACHE_HOME"/zsh ]]; then
-    zstyle ':completion:**' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
-else
-    zstyle ':completion:**' cache-path "$HOME"/.zcompcache
-fi
-
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*:git-checkout:*' sort false
-zstyle ':completion:*:descriptions' format '[%d]'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # TODO: configure LS_COLORS
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:*'  fzf-preview '[[ -d $realpath ]] && eza -1 -F --group-directories-first --color=always --color-scale $realpath || bat --style=numbers --color=always $realpath'
-
-# Shell integrations
-eval "$(thefuck --alias)" # can be slow
-eval "$(zoxide init zsh)"
-source <(fzf --zsh)
-source "$XDG_CONFIG_HOME"/zsh/.iterm2_shell_integration.zsh
-
 # Aliases and functions
 if [[ -n "$XDG_CONFIG_HOME" && -d "$XDG_CONFIG_HOME"/zsh ]]; then
     source "$XDG_CONFIG_HOME"/zsh/.zsh_aliases
@@ -91,11 +70,31 @@ else
     source "$HOME"/.zsh_functions
 fi
 
+# Completions
+zstyle ':completion:**' use-cache on
+if [[ -n "$XDG_CACHE_HOME" && -d "$XDG_CACHE_HOME"/zsh ]]; then
+    zstyle ':completion:**' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
+else
+    zstyle ':completion:**' cache-path "$HOME"/.zcompcache
+fi
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # TODO: configure LS_COLORS
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:*' fzf-preview "[[ -d \$realpath ]] && $EZA_BASE_CMD -1 --color=always \$realpath || bat --style=numbers --color=always \$realpath"
+
+# Shell integrations
+eval "$(thefuck --alias)" # if it's slow, comment it out
+eval "$(zoxide init zsh)"
+source <(fzf --zsh)
+source "$XDG_CONFIG_HOME"/zsh/.iterm2_shell_integration.zsh
+
 # TODO: remove the lines below
 eval "$(mise activate zsh)"
 source ~/.brazil_completion/zsh_completion
 
-# TODO: run these but once. Maybe just add as login items? 
+# TODO: run these but once. Maybe just add as login items?
 # skhd --start-service
 # yabai --start-service
 # brew services start borders
@@ -116,4 +115,3 @@ source ~/.brazil_completion/zsh_completion
 #     tmux switch-client -t "$session_name"
 # fi
 
-export PATH=$PATH:/Users/kkramarz/.spicetify

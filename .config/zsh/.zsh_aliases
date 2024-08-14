@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source "$HOME"/.zshenv
+
 # Reload config
 alias s="source $HOME/.zshenv ; source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zprofile ; source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zshrc"
 
@@ -9,16 +11,6 @@ alias cat='bat'
 alias diff='delta'
 alias du='dust -r'
 alias less='bat --paging=always'
-
-# ls
-alias l='eza -h --group-directories-first --git --time-style=long-iso --no-user --color-scale'
-alias la='l -a'
-alias ll='l -l'
-alias lf='l --icons -F'
-alias lt='l --icons -F -T --level=2'
-alias lla='l -la'
-alias lfa='l --icons -F -a'
-alias lta='l --icons -F -a -T --level=2'
 
 # Additional flags
 alias rm='rm -iv'
@@ -33,7 +25,7 @@ alias grep='grep --color=auto'
 alias clear='clear -x'
 alias rsync='rsync -vrPlu'
 alias ffmpeg='ffmpeg -hide_banner'
-alias ip='ip -color=auto'
+alias wget="wget --hsts-file=${XDG_DATA_HOME:-$HOME/.local/share}/wget-hsts"
 
 # Shorthands
 alias ka='killall'
@@ -47,9 +39,22 @@ alias ff='fastfetch'
 alias py='python3'
 alias findf='find . -type f -name'
 alias findd='find . -type d -name'
-alias val='valgrind --error-exitcode=123 --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all -s --track-origins=yes'
 alias yt='yt-dlp --embed-metadata -i'
 alias yta='yt -x -f bestaudio/best'
+
+# ls
+alias l="$EZA_BASE_CMD"
+alias l1="$EZA_BASE_CMD -1"
+alias ls="$EZA_BASE_CMD"
+alias ls1="$EZA_BASE_CMD -1"
+alias la="$EZA_BASE_CMD -a"
+alias l1a="$EZA_BASE_CMD -1a"
+alias ll="$EZA_BASE_CMD -l"
+alias lla="$EZA_BASE_CMD -la"
+alias lt2="$EZA_BASE_CMD -T --level=2"
+alias lta2="$EZA_BASE_CMD -T --level=2 -a"
+alias lt2="$EZA_BASE_CMD -T --level=2"
+alias lta2="$EZA_BASE_CMD -T --level=2 -a"
 
 # Navigation
 alias ..='cd ..'
@@ -59,7 +64,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 # Dotfiles
-alias cfg='/usr/bin/git --git-dir=${DOTFILES_HOME:-$HOME/.dotfiles} --work-tree=$HOME'
+alias cfg="$(which git) --git-dir=${DOTFILES_HOME:-$HOME/.dotfiles} --work-tree=$HOME"
 
 # Vim
 [ -x "$(command -v nvim)" ] && alias vi='nvim' vim='nvim' vimdiff='nvim -d'

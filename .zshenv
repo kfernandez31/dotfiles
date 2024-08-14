@@ -10,6 +10,9 @@ export XDG_RUNTIME_DIR="/run/user/$UID"
 # dotfiles
 export DOTFILES_HOME="$HOME/.dotfiles"
 
+# eza
+export EZA_BASE_CMD="eza --icons --classify --color-scale --group-directories-first --header --git --git-repos --time-style=long-iso --no-user --smart-group"
+
 # less
 export LESSHISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}"/less/history
 
@@ -54,9 +57,9 @@ export LANG=en_US.UTF-8
 # GCC colors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# paging
+# man
 export MANPAGER='nvim +Man!'
-# export PAGER='less -irRSx4'
+export MANWIDTH=999
 
 # TODO: remove
 # sqlite

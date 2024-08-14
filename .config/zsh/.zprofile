@@ -4,8 +4,11 @@
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Neovim
+# NeoVim
 export PATH="$HOME/Applications/nvim-macos-x86_64/bin:$PATH"
+
+# Spicetify
+export PATH="$PATH:$HOME/.spicetify"
 
 # TODO: remove the lines below
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
