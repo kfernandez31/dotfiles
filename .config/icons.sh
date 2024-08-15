@@ -42,6 +42,7 @@ export ICON_WEATHER= #󰼰󰙿
 export ICON_WEB=󰖟
 export ICON_IMAGE=
 export ICON_POMODORO=
+export ICON_SPOTIFY=
 
 export ICON_CLOCK=󰥔
 export ICON_CALENDAR=󰃭

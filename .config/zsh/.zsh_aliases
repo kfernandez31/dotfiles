@@ -9,6 +9,7 @@ alias s="source $HOME/.zshenv ; source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zp
 alias cd='z'
 alias cat='bat'
 alias diff='delta'
+alias find='fdcfg '
 alias du='dust -r'
 alias less='bat --paging=always'
 
@@ -55,6 +56,17 @@ alias lt2="$EZA_BASE_CMD -T --level=2"
 alias lta2="$EZA_BASE_CMD -T --level=2 -a"
 alias lt2="$EZA_BASE_CMD -T --level=2"
 alias lta2="$EZA_BASE_CMD -T --level=2 -a"
+alias lt3="$EZA_BASE_CMD -T --level=3"
+alias lta3="$EZA_BASE_CMD -T --level=3 -a"
+alias lt4="$EZA_BASE_CMD -T --level=4"
+alias lta4="$EZA_BASE_CMD -T --level=4 -a"
+
+# tmux
+alias t='tmux attach || tmux new-session'
+alias ta='tmux attach -t'
+alias tn='tmux new -s'
+alias tk='tmux kill-session -t'
+alias tl='tmux list-sessions'
 
 # Navigation
 alias ..='cd ..'

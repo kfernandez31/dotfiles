@@ -20,7 +20,7 @@ if [[ $SSID != "" ]]; then
 		ICON=$ICON_WIFI_UNLOCK
 	fi
 else
-	COLOR=$COLOR_WHITE
+	COLOR=$COLOR_FG_0
 	ICON=$ICON_WIFI_OFF
 	LABEL="Not Connected"
 fi

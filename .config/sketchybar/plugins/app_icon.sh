@@ -3,26 +3,8 @@
 source "${XDG_CONFIG_HOME:-$HOME/.config}"/icons.sh
 
 case "$1" in
-"Terminal" | "Warp" | "iTerm2")
+"Terminal" | "iTerm2")
   	RESULT=$ICON_TERM
-	#TODO: doesn't work atm
-	if grep -q "btop" <<< $2; then
-		RESULT=$ICON_CHART
-	elif grep -q "brew" <<< $2; then
-		RESULT=$ICON_PACKAGE
-	elif grep -q "nvim" <<< $2; then
-		RESULT=$ICON_DEV
-	elif grep -q "ranger" <<< $2; then
-		RESULT=$ICON_FILE
-	elif grep -q "taskwarrior-tui" <<< $2; then
-		RESULT=$ICON_LIST
-	elif grep -q "unimatrix\|pipes.sh" <<< $2; then
-		RESULT=$ICON_SCREENSAVER
-	elif grep -q "bat" <<< $2; then
-		RESULT=$ICON_NOTE
-	elif grep -q "tty-clock" <<< $2; then
-		RESULT=$ICON_CLOCK
-	fi
 	;;
 "Finder")
 	RESULT=$ICON_FILE
@@ -123,6 +105,9 @@ SelfControl*)
 "DB Browser for SQLite")
 	RESULT=$ICON_DATABASE
 	;;
+"Dropover")
+  RESULT=""
+  ;;
 *)
 	RESULT=$ICON_APP
 	;;

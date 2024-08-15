@@ -25,8 +25,6 @@ zinit light hlissner/zsh-autopair
 # Snippets
 zinit snippet OMZP::sudo
 zinit snippet OMZP::fzf
-# zinit snippet OMZP::command-not-found # FIXME
-# zinit snippet OMZP::fancy-ctrl-z      # FIXME
 
 # Download the PowerLevel10k prompt, if it's not there yet
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -88,7 +86,9 @@ zstyle ':fzf-tab:complete:*' fzf-preview "[[ -d \$realpath ]] && $EZA_BASE_CMD -
 eval "$(thefuck --alias)" # if it's slow, comment it out
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
-source "$XDG_CONFIG_HOME"/zsh/.iterm2_shell_integration.zsh
+source <(procs --gen-completion-out zsh)
+source <(delta --generate-completion zsh)
+source "${XDG_CONFIG_HOME:-$HOME/.config}"/zsh/.iterm2_shell_integration.zsh
 
 # TODO: remove the lines below
 eval "$(mise activate zsh)"

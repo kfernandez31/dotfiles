@@ -1,10 +1,23 @@
 *history*
 *cache*
+*.log*
 **/.DS_Store
+.config/iterm2/AppSupport
+.config/iterm2/sockets
 .config/zsh/.zsh_sessions
 .config/raycast
 .config/nvim
 .config/spicetify
+.config/nnn/bookmarks
+.config/nnn/mounts
+.config/nnn/sessions
+.config/spicetify/*
+!.config/spicetify/config-xpui.ini
+# FIXME: these don't work unfortunately:
+# !.config/spicetify/Themes/
+# .config/spicetify/Themes/*
+# !.config/spicetify/Themes/text/color.ini
+# !.config/spicetify/Themes/text/user.css
 # TODO: remove the lines below:
 .config/mise
 .config/brazil

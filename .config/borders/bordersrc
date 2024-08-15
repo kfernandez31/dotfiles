@@ -7,8 +7,8 @@ options=(
 	width=4.0
 	hidpi=on
 	active_color="$COLOR_ACCENT_BRIGHT"
-	inactive_color="$COLOR_BACKGROUND"
-	background_color="$COLOR_BACKGROUND"
+	inactive_color="$COLOR_BG_1"
+	background_color="$COLOR_BG_DIM"
 )
 
 borders "${options[@]}"
