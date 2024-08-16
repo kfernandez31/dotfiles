@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# TODO: make a matching toml, or rather, have the colors be sourced here from the toml
+
 # Gruvbox Material Dark Medium Color Palette
 
 # Colors
@@ -13,7 +15,6 @@ export COLOR_CYAN=0xe089b482
 
 export COLOR_ORANGE=0xe0e78a4e
 
-
 # Bright colors
 
 export COLOR_RED_BRIGHT=$COLOR_RED
@@ -24,11 +25,6 @@ export COLOR_MAGENTA_BRIGHT=$COLOR_MAGENTA
 export COLOR_CYAN_BRIGHT=$COLOR_CYAN
 
 export COLOR_ORANGE_BRIGHT=$COLOR_ORANGE
-
-# Accent
-
-export COLOR_ACCENT=$COLOR_GREEN
-export COLOR_ACCENT_BRIGHT=$COLOR_ACCENT
 
 # Foreground
 

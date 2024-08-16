@@ -4,9 +4,9 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}"/colors.sh
 
 options=(
 	style=round
-	width=4.0
+	width=4.5
 	hidpi=on
-	active_color="$COLOR_ACCENT_BRIGHT"
+	active_color="$COLOR_CYAN"
 	inactive_color="$COLOR_BG_1"
 	background_color="$COLOR_BG_DIM"
 )

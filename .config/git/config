@@ -11,44 +11,45 @@
   editor         = $EDITOR
   pager          = delta
 
+# TODO: define and reuse colors like here: https://github.com/dandavison/delta/blob/08ec386f2517ea25c8810be924847fe54018a023/themes.gitconfig#L106
 [delta]
-  pager    = "less --mouse"
-  syntax-theme = "gruvbox-material-dark"
-  hunk-header-style = file line-number syntax
-  hunk-header-decoration-style = "#d8a657" box
-  hunk-header-file-style = "#ddc7a1"
+  pager                         = "less --mouse"
+  syntax-theme                  = "gruvbox-material-dark"
+  hunk-header-style             = file line-number syntax
+  hunk-header-decoration-style  = "#d8a657" box
+  hunk-header-file-style        = "#ddc7a1"
   hunk-header-line-number-style = "#ddc7a1"
-  file-style = "#d4be98" bold
-  file-decoration-style = "#e78a4e" ul box
-  commit-style = omit
-  navigate                    = true
-  side-by-side                = true
-  true-color                  = always
-  hyperlinks                  = true
-  plus-style                  = syntax "#34381b"
-  plus-emph-style             = syntax "#3b4439"
-  minus-style                 = syntax "#402120"
-  minus-emph-style            = syntax "#4f422e"
-  zero-style                  = syntax
-  whitespace-error-style      = "magenta reverse"
-  map-styles                  =          \
+  file-style                    = "#d4be98" bold
+  file-decoration-style         = "#e78a4e" ul box
+  commit-style                  = omit
+  navigate                      = true
+  side-by-side                  = true
+  true-color                    = always
+  hyperlinks                    = true
+  plus-style                    = syntax "#34381b"
+  plus-emph-style               = syntax "#3b4439"
+  minus-style                   = syntax "#402120"
+  minus-emph-style              = syntax "#4f422e"
+  zero-style                    = syntax
+  whitespace-error-style        = "magenta reverse"
+  map-styles                    =        \
        bold red     => syntax "#ea6962", \
        bold green   => syntax "#a9b665", \
        bold yellow  => syntax "#d8a657", \
        bold blue    => syntax "#7daea3", \
        bold magenta => syntax "#d3869b", \
        bold cyan    => syntax "#89b482", \
-  hyperlinks-file-link-format = "vscode://file/{path}:{line}" # TODO: configure for nvim
-  file-added-label    = [+]
-  file-copied-label   = [==]
-  file-modified-label = [*]
-  file-removed-label  = [-]
-  file-renamed-label  = [->]
-  line-numbers = true
-  line-numbers-left-format  = "{nm:>1}┊"
-  line-numbers-left-style   = red
-  line-numbers-right-format = "{np:>1}┊"
-  line-numbers-right-style  = green
+  hyperlinks-file-link-format   = "vscode://file/{path}:{line}" # TODO: configure for nvim
+  file-added-label              = [+]
+  file-copied-label             = [==]
+  file-modified-label           = [*]
+  file-removed-label            = [-]
+  file-renamed-label            = [->]
+  line-numbers                  = true
+  line-numbers-left-format      = "{nm:>1}┊"
+  line-numbers-left-style       = red
+  line-numbers-right-format     = "{np:>1}┊"
+  line-numbers-right-style      = green
 
 [color]
   ui = auto

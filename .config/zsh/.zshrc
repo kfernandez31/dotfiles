@@ -80,6 +80,7 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # TODO: configure LS_COLORS
 zstyle ':completion:*' menu no
+# TODO: disable preview on command flag completions
 zstyle ':fzf-tab:complete:*' fzf-preview "[[ -d \$realpath ]] && $EZA_BASE_CMD -1 --color=always \$realpath || bat --style=numbers --color=always \$realpath"
 
 # Shell integrations
