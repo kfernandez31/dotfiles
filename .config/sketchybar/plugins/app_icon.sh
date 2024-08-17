@@ -105,9 +105,6 @@ SelfControl*)
 "DB Browser for SQLite")
 	RESULT=$ICON_DATABASE
 	;;
-"Dropover")
-  RESULT=""
-  ;;
 *)
 	RESULT=$ICON_APP
 	;;

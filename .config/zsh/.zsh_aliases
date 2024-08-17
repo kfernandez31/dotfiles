@@ -9,7 +9,6 @@ alias s="source $HOME/.zshenv ; source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zp
 alias cd='z'
 alias cat='bat'
 alias diff='delta'
-alias find='fdcfg '
 alias du='dust -r'
 alias less='bat --paging=always'
 

@@ -1,6 +1,11 @@
 [include]
   path = ~/.config/delta/themes.gitconfig
 
+# TODO: whitespace-removing or alterting hook
+# see:
+# https://vanwilson.info/2016/05/wrangling-wandering-whitespace-git/
+# https://stackoverflow.com/questions/591923/make-git-automatically-remove-trailing-white-space-before-committing
+
 [user]
   name  = kfernandez31
   email = k66901783+kfernandez31@users.noreply.github.com

@@ -1,7 +1,12 @@
 # Toggling skhd on/off
 :: passthrough
-alt - t ; passthrough
-passthrough < alt - t ; default
+shift + alt - t ; passthrough
+passthrough < shift + alt - t ; default
+
+# TODO: Disable right shift behavior, use only lshift
+# see: https://github.com/koekeishiya/skhd/issues/1
+
+# TODO: research most optimal modifier keys in general
 
 # Changing Window focus
 
