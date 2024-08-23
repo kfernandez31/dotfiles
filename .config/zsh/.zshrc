@@ -81,10 +81,16 @@ zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # TODO: configure LS_COLORS
 zstyle ':completion:*' menu no
 # TODO: disable preview on command flag completions
-zstyle ':fzf-tab:complete:*' fzf-preview "[[ -d \$realpath ]] && $EZA_BASE_CMD -1 --color=always \$realpath || bat --style=numbers --color=always \$realpath"
+# TODO: add support for marking
+# TODO: change style (toggle height)
+zstyle ':fzf-tab:complete:*' fzf-preview "[[ -d \$realpath ]] && eza $(<$EZA_DEFAULT_OPTS_FILE) -1 --color=always \$realpath || bat --style=numbers --color=always \$realpath"
 
-# Shell integrations
-eval "$(thefuck --alias)" # if it's slow, comment it out
+# Shell integrations/completions
+
+# TODO: set up
+#eval "$(direnv hook zsh)"
+
+eval "$(thefuck --alias)"
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 source <(procs --gen-completion-out zsh)
@@ -101,18 +107,4 @@ source ~/.brazil_completion/zsh_completion
 # brew services start borders
 # brew services start sketchybar
 
-# TODO:
-# session_name="main"
-#
-# tmux has-session -t=$session_name 2> /dev/null
-#
-# if [[ $? -ne 0 ]]; then
-#     TMUX='' tmux new-session -d -s "$session_name"
-# fi
-#
-# if [[ -z "$TMUX" ]]; then
-#     tmux attach -t "$session_name"
-# else
-#     tmux switch-client -t "$session_name"
-# fi
-
+# TODO: change highlight color in iTerm (it's currently the same as the background)

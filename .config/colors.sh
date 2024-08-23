@@ -1,38 +1,35 @@
 #!/bin/sh
 
-# TODO: make a matching toml, or rather, have the colors be sourced here from the toml
-
 # Gruvbox Material Dark Medium Color Palette
 
-# Colors
-
+# Base colors
 export COLOR_RED=0xe0ea6962
-export COLOR_GREEN=0xe0a9b665
+export COLOR_ORANGE=0xe0e78a4e
 export COLOR_YELLOW=0xe0d8a657
+export COLOR_GREEN=0xe0a9b665
+export COLOR_CYAN=0xe089b482
 export COLOR_BLUE=0xe07daea3
 export COLOR_MAGENTA=0xe0d3869b
-export COLOR_CYAN=0xe089b482
-
-export COLOR_ORANGE=0xe0e78a4e
 
 # Bright colors
+export COLOR_RED_BRIGHT=0xe0f09d72
+export COLOR_ORANGE_BRIGHT=0xe0f7a65e
+export COLOR_YELLOW_BRIGHT=0xe0e8b667
+export COLOR_GREEN_BRIGHT=0xe0c9c675
+export COLOR_CYAN_BRIGHT=0xe0a9c592
+export COLOR_BLUE_BRIGHT=0xe0f5eea3
+export COLOR_MAGENTA_BRIGHT=0xe0f5a69b
 
-export COLOR_RED_BRIGHT=$COLOR_RED
-export COLOR_GREEN_BRIGHT=$COLOR_GREEN
-export COLOR_YELLOW_BRIGHT=$COLOR_YELLOW
-export COLOR_BLUE_BRIGHT=$COLOR_BLUE
-export COLOR_MAGENTA_BRIGHT=$COLOR_MAGENTA
-export COLOR_CYAN_BRIGHT=$COLOR_CYAN
-
-export COLOR_ORANGE_BRIGHT=$COLOR_ORANGE
+# Grey
+export COLOR_GREY_0=0xe07c6f64
+export COLOR_GREY_1=0xe0928374
+export COLOR_GREY_2=0xe0a89984
 
 # Foreground
-
 export COLOR_FG_0=0xe0d4be98
 export COLOR_FG_1=0xe0ddc7a1
 
 # Background
-
 export COLOR_BG_DIM=0xe01b1b1b
 export COLOR_BG_0=0xe0282828
 export COLOR_BG_1=0xe032302f
@@ -40,11 +37,9 @@ export COLOR_BG_2=$COLOR_BG_2
 export COLOR_BG_3=0xe045403d
 export COLOR_BG_4=$COLOR_BG_3
 export COLOR_BG_5=0xe05a524c
-
 export COLOR_BG_STATUSLINE_1=0xe032302f
 export COLOR_BG_STATUSLINE_2=0xe03a3735
 export COLOR_BG_STATUSLINE_3=0xe0504945
-
 export COLOR_BG_DIFF_GREEN=0xe034381b
 export COLOR_BG_VISUAL_GREEN=0xe03b4439
 export COLOR_BG_DIFF_RED=0xe0402120
@@ -53,14 +48,6 @@ export COLOR_BG_DIFF_BLUE=0xe00e363e
 export COLOR_BG_VISUAL_BLUE=0xe0374141
 export COLOR_BG_VISUAL_YELLOW=0xe04f422e
 export COLOR_BG_CURRENT_WORD=0xe03c3836
-
 export COLOR_BG_RED=$COLOR_RED
 export COLOR_BG_GREEN=$COLOR_GREEN
 export COLOR_BG_YELLOW=$COLOR_YELLOW
-
-# Grey
-
-export COLOR_GREY_0=0xe07c6f64
-export COLOR_GREY_1=0xe0928374
-export COLOR_GREY_2=0xe0a89984
-

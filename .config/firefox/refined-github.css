@@ -1,9 +1,3 @@
-/* 
- * To be used alongside DarkReader with:
- * - Brightness: +5
- * - Contrast:   -10
- * - Sepia:      +30
-*/
 :root {
   /* Colors */
   --bg0: #4a4a4a; /* Light bg */
@@ -12,17 +6,26 @@
   --fg0: #fff3b0; /* Main fg */
   --fg1: #f2e6a0; /* Darker fg */
 
-  --red: #ff4d4d; /* Neon red */
-  --orange: #ffb84d; /* Neon orange */
-  --yellow: #ffff4d; /* Neon yellow */
-  --green: #b3ff66; /* Neon green */
-  --aqua: #99ffcc; /* Neon aqua */
-  --blue: #66ccff; /* Neon blue */
-  --purple: #ff66b3; /* Neon purple */
+  --red: #c95c4f;
+  --orange: #d67c43;
+  --yellow: #c4933f;
+  --green: #8f964d;
+  --aqua: #6e8c5f;
+  --blue: #668c7f;
+  --purple: #b96a7f;
+
+  --red: #ea6962;
+  --orange: #e78a4e;
+  --yellow: #d8a657;
+  --green: #a9b665;
+  --aqua: #89b482;
+  --blue: #7daea3;
+  --purple: #d3869b;
 
   /* -- Main page -- */
 
   /* Background */
+  /*
   --color-canvas-default: var(--bg1) !important;
   --color-page-header-bg: var(--bg2) !important;
   --color-canvas-subtle: var(--bg1) !important;
@@ -47,8 +50,10 @@
   --color-diffstat-addition-bg: var(--green) !important;
   --color-btn-danger-hover-bg: var(--red) !important;
   --color-attention-muted: var(--bg0) !important;
+  */
 
   /* Foreground */
+  /*
   --color-success-fg: var(--green) !important;
   --color-codemirror-text: var(--fg0) !important;
   --color-fg-default: var(--fg0) !important;
@@ -59,11 +64,14 @@
   --color-header-text: var(--fg0) !important;
   --color-codemirror-linenumber-text: var(--fg1) !important;
   --color-btn-danger-text: var(--red) !important;
+  */
 
   /* Other */
+  /*
   --color-primer-border-active: var(--bg2) !important;
   --color-btn-danger-hover-border: var(--red) !important;
   --color-danger-muted: var(--bg0) !important;
+  */
 
   /* Syntax */
   --color-prettylights-syntax-constant: var(--purple) !important;

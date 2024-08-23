@@ -1,39 +1,5 @@
-# caches
-*history*
-*cache*
-*.log*
 **/.DS_Store
-
-# iterm2
-.config/iterm2/AppSupport
-.config/iterm2/sockets
-
-# zsh
-.config/zsh/.zsh_sessions
-
-# raycast
-.config/raycast
-
-# nvim
-# TODO: remove
-.config/nvim
-
-# spicetify
-# TODO: make nicer
-.config/spicetify/Backup
-.config/spicetify/CustomApps
-.config/spicetify/Extensions
-.config/spicetify/Extracted
-.config/spicetify/config-xpui.ini
-
-# nnn
-.config/nnn/bookmarks
-.config/nnn/mounts
-.config/nnn/sessions
-
-# work
-# TODO: remove
-.config/mise
-.config/brazil
-.config/cr
-.config/torch
+**/.idea
+**/.vscode
+**/build
+**/target

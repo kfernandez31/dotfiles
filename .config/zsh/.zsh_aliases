@@ -28,6 +28,7 @@ alias ffmpeg='ffmpeg -hide_banner'
 alias wget="wget --hsts-file=${XDG_DATA_HOME:-$HOME/.local/share}/wget-hsts"
 
 # Shorthands
+alias loc='scc'
 alias ka='killall'
 alias g='git'
 alias c='clear -x'
@@ -43,26 +44,35 @@ alias yt='yt-dlp --embed-metadata -i'
 alias yta='yt -x -f bestaudio/best'
 
 # ls
+# TODO: remove once eza adds supports a config file (see: https://github.com/eza-community/eza/pull/840)
+if [ -n "$XDG_CONFIG_HOME" ]; then
+    EZA_BASE_CMD="$XDG_CONFIG_HOME"/eza/ezarc
+else
+    EZA_BASE_CMD="$HOME"/.ezarc
+fi
+EZA_BASE_CMD="eza $(tr -s '\n' ' ' < $EZA_BASE_CMD)"
+
 alias l="$EZA_BASE_CMD"
-alias l1="$EZA_BASE_CMD -1"
+alias l1="$EZA_BASE_CMD   -1"
 alias ls="$EZA_BASE_CMD"
-alias ls1="$EZA_BASE_CMD -1"
-alias la="$EZA_BASE_CMD -a"
-alias l1a="$EZA_BASE_CMD -1a"
-alias ll="$EZA_BASE_CMD -l"
-alias lla="$EZA_BASE_CMD -la"
-alias lt1="$EZA_BASE_CMD -T --level=1"
+alias ls1="$EZA_BASE_CMD  -1"
+alias la="$EZA_BASE_CMD   -a"
+alias l1a="$EZA_BASE_CMD  -1a"
+alias ll="$EZA_BASE_CMD   -l"
+alias lla="$EZA_BASE_CMD  -la"
+alias lt1="$EZA_BASE_CMD  -T --level=1"
 alias lta1="$EZA_BASE_CMD -T --level=1 -a"
-alias lt2="$EZA_BASE_CMD -T --level=2"
+alias lt2="$EZA_BASE_CMD  -T --level=2"
 alias lta2="$EZA_BASE_CMD -T --level=2 -a"
-alias lt2="$EZA_BASE_CMD -T --level=2"
+alias lt2="$EZA_BASE_CMD  -T --level=2"
 alias lta2="$EZA_BASE_CMD -T --level=2 -a"
-alias lt3="$EZA_BASE_CMD -T --level=3"
+alias lt3="$EZA_BASE_CMD  -T --level=3"
 alias lta3="$EZA_BASE_CMD -T --level=3 -a"
-alias lt4="$EZA_BASE_CMD -T --level=4"
+alias lt4="$EZA_BASE_CMD  -T --level=4"
 alias lta4="$EZA_BASE_CMD -T --level=4 -a"
 
 # tmux
+# TODO: check out
 alias t='tmux attach || tmux new-session'
 alias ta='tmux attach -t'
 alias tn='tmux new -s'

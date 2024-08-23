@@ -1,3 +1,5 @@
+# TODO: should I put this file in .gitignore?
+
 # Rust
 . "$CARGO_HOME"/env
 

@@ -1,0 +1,44 @@
+# iterm2
+.config/iterm2/AppSupport
+.config/iterm2/sockets
+
+# zsh
+.config/zsh/.zsh_sessions
+
+# raycast
+.config/raycast
+
+# nvim
+# TODO: remove
+.config/nvim
+
+# spicetify
+.config/spicetify/Backup
+.config/spicetify/CustomApps
+.config/spicetify/Extensions
+.config/spicetify/Extracted
+.config/spicetify/config-xpui.ini
+
+# tmux
+.config/tmux/plugins
+
+# TODO: test
+# .config/spicetify/*
+# !.config/spicetify/Themes
+# .config/spicetify/Themes/*
+# !.config/spicetify/Themes/text
+# .config/spicetify/Themes/text/*
+# !.config/spicetify/Themes/text/color.ini
+# !.config/spicetify/Themes/text/user.css
+
+# nnn
+.config/nnn/bookmarks
+.config/nnn/mounts
+.config/nnn/sessions
+
+# work
+# TODO: remove
+.config/mise
+.config/brazil
+.config/cr
+.config/torch
