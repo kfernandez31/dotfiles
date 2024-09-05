@@ -1,7 +1,4 @@
-# Theme
---theme="gruvbox"
-
-# Style
-
-# Pager
---pager="less --RAW-CONTROL-CHARS --quit-if-one-screen --mouse" 
+--theme="gruvbox-material-dark"
+--style=changes,numbers,snip
+--pager="less --RAW-CONTROL-CHARS --quit-if-one-screen --mouse"
+--tabs=4

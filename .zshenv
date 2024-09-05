@@ -25,18 +25,20 @@ export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 export EZA_DEFAULT_OPTS_FILE="$XDG_CONFIG_HOME"/eza/ezarc
 
 # fzf
-export FZF_DEFAULT_COMMAND='fd . --hidden --color always'
+export FZF_DEFAULT_COMMAND='fd . --hidden --follow --color=always'
 export FZF_DEFAULT_OPTS_FILE="$XDG_CONFIG_HOME"/fzf/fzfrc
 
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_CTRL_T_OPTS=$(<"$XDG_CONFIG_HOME"/fzf/fzf_ctrl_t_opts)
 
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+# TODO: think of a similar command to alt-c for opening a file
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type=d"
 export FZF_ALT_C_OPTS=$(<"$XDG_CONFIG_HOME"/fzf/fzf_alt_c_opts)
 
 export FZF_CTRL_R_OPTS=$(<"$XDG_CONFIG_HOME"/fzf/fzf_ctrl_r_opts)
 
-# TODO: think of a similar command to alt-c for opening a file
+# ripgrep
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME"/ripgrep/ripgreprc
 
 # gradle # TODO: remove
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
@@ -50,12 +52,17 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 # zinit
 export ZINIT_HOME="$XDG_DATA_HOME"/zinit.git
 
+# zsh-defer
+export ZSH_DEFER_HOME="$XDG_DATA_HOME"/zsh-defer.git
+
 # less
 export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+export LESSUTFCHARDEF=E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
 
 # zsh history
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
-export HISTSIZE=10000
+export HISTSIZE=9223372036854775807
+export HISTFILESIZE=$HISTSIZE
 export SAVEHIST=$HISTSIZE
 export HISTDUP=erase
 export HISTCONTROL=ignorespace:ignoredups

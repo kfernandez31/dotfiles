@@ -1,33 +1,31 @@
 # Toggling skhd on/off
 :: passthrough
-shift + alt - t ; passthrough
-passthrough < shift + alt - t ; default
+shift + alt - p ; passthrough
+passthrough < shift + alt - p ; default
 
-# TODO: Disable right shift behavior, use only lshift
-# see: https://github.com/koekeishiya/skhd/issues/1
-
-# TODO: research most optimal modifier keys in general
+# TODO: research most optimal modifier keys in general. Resources:
+# - tilde/fn/pipe
 
 # Changing Window focus
 
 # change window focus within space
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+lalt - h : yabai -m window --focus west
+lalt - j : yabai -m window --focus south
+lalt - k : yabai -m window --focus north
+lalt - l : yabai -m window --focus east
 
 
 # Modifying the layout
 
 # rotate layout
 alt - r : yabai -m space --rotate 270
-shift + alt - r : yabai -m space --rotate 90
+shift + lalt - r : yabai -m space --rotate 90
 
 # flip along y-axis
 alt - y : yabai -m space --mirror y-axis
 
 # flip along x-axis
-alt - x : yabai -m space --mirror x-axis
+lalt - x : yabai -m space --mirror x-axis
 
 # toggle window float
 alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
@@ -36,7 +34,7 @@ alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
 # Modifying Window Size
 
 # maximize a window
-alt - z : yabai -m window --toggle zoom-fullscreen
+lalt - z : yabai -m window --toggle zoom-fullscreen
 
 # balance out tree of windows (resize to occupy same area)
 alt - b : yabai -m space --balance

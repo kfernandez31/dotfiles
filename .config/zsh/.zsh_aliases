@@ -11,6 +11,9 @@ alias cat='bat'
 alias diff='delta'
 alias du='dust -r'
 alias less='bat --paging=always'
+alias find='fd'
+alias grep='rg'
+
 
 # Additional flags
 alias rm='rm -iv'
@@ -25,7 +28,7 @@ alias grep='grep --color=auto'
 alias clear='clear -x'
 alias rsync='rsync -vrPlu'
 alias ffmpeg='ffmpeg -hide_banner'
-alias wget="wget --hsts-file=${XDG_DATA_HOME:-$HOME/.local/share}/wget-hsts"
+alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 
 # Shorthands
 alias loc='scc'
@@ -38,20 +41,12 @@ alias tl='tail'
 alias hd='head'
 alias ff='fastfetch'
 alias py='python3'
-alias findf='find . -type f -name'
-alias findd='find . -type d -name'
 alias yt='yt-dlp --embed-metadata -i'
 alias yta='yt -x -f bestaudio/best'
+alias fk='fuck'
 
-# ls
-# TODO: remove once eza adds supports a config file (see: https://github.com/eza-community/eza/pull/840)
-if [ -n "$XDG_CONFIG_HOME" ]; then
-    EZA_BASE_CMD="$XDG_CONFIG_HOME"/eza/ezarc
-else
-    EZA_BASE_CMD="$HOME"/.ezarc
-fi
-EZA_BASE_CMD="eza $(tr -s '\n' ' ' < $EZA_BASE_CMD)"
-
+# ls TODO: remove once eza adds supports a config file (see: https://github.com/eza-community/eza/pull/840)
+EZA_BASE_CMD="eza $(tr -s '\n' ' ' < $EZA_DEFAULT_OPTS_FILE)"
 alias l="$EZA_BASE_CMD"
 alias l1="$EZA_BASE_CMD   -1"
 alias ls="$EZA_BASE_CMD"
@@ -72,7 +67,6 @@ alias lt4="$EZA_BASE_CMD  -T --level=4"
 alias lta4="$EZA_BASE_CMD -T --level=4 -a"
 
 # tmux
-# TODO: check out
 alias t='tmux attach || tmux new-session'
 alias ta='tmux attach -t'
 alias tn='tmux new -s'
@@ -87,7 +81,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 # Dotfiles
-alias cfg="$(which git) --git-dir=${DOTFILES_HOME:-$HOME/.dotfiles} --work-tree=$HOME"
+alias cfg="$(which git) --git-dir=$DOTFILES_HOME --work-tree=$HOME"
 
 # Vim
 [ -x "$(command -v nvim)" ] && alias vi='nvim' vim='nvim' vimdiff='nvim -d'

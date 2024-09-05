@@ -9,84 +9,135 @@
 [user]
   name  = kfernandez31
   email = k66901783+kfernandez31@users.noreply.github.com
-
 [core]
   untrackedCache = true
   autocrlf       = input
+  safecrlf       = true
   editor         = $EDITOR
+  compression    = 9
   pager          = delta
-
+[color]
+  ui          = auto
+  branch      = auto
+  interactive = auto
+  status      = auto
+[color "diff"]
+	newMoved            = italic blue
+	newMovedAlternative = italic cyan
+	oldMoved            = dim blue
+	oldMovedAlternative = dim cyan
+[rerere]
+  enabled    = true
+  autoupdate = true
+[transfer]
+  fsckobjects = true
+[receive]
+  fsckobjects = true
+[help]
+  autocorrect = prompt
+[submodule]
+  recurse = true
+[url "git@github.com:"]
+	insteadOf = "https://github.com/" # edits the remote urls of repos cloned through HTTPS to be an ssh one
+[init]
+  defaultBranch = main
+[commit]
+  verbose = true
+[push]
+  autoSetupRemote = true
+  followtags      = true
+[fetch]
+  prune       = true
+  fsckobjects = true
+[pull]
+  rebase          = true
+  autosetuprebase = always
+  prune           = true
+  autosquash      = true
+[branch]
+  sort = -committerdate
+[merge]
+  conflictstyle = zdiff3
+  keepbackup    = false
+  # tool = meld/nvim/nvimdiff # TODO: set
+[mergetool]
+  keepBackup      = false
+  keepTemporaries = false
+  writeToTemp     = true
+  prompt          = false
+[rebase]
+  autostash           = true
+  missingCommitsCheck = error
+  updateRefs          = true
+[diff]
+  colorMoved     = zebra
+  colormovedws   = allow-indentation-change
+  submodule      = log
+  mnemonicPrefix = true
+  wordRegex      = .
+  algorithm      = histogram
+  tool           = difftastic
+[status]
+  submoduleSummary = true
+[stash]
+	showDiff = true
+[log]
+  abbrevCommit = true
+  date         = iso
+  follow       = true
+[pager]
+  difftool = true
+[interactive]
+  diffFilter = delta --color-only
 # TODO: define and reuse colors like here: https://github.com/dandavison/delta/blob/08ec386f2517ea25c8810be924847fe54018a023/themes.gitconfig#L106
 [delta]
-  pager                         = "less --mouse"
+  features = defaults decorations links line-numbers
+[delta "defaults"]
+  dark                          = true
+  side-by-side                  = true
+  pager                         = "less --RAW-CONTROL-CHARS --quit-if-one-screen --mouse"
   syntax-theme                  = "gruvbox-material-dark"
+  true-color                    = always
+  navigate                      = true
+  whitespace-error-style        = magenta reverse
+[delta "links"]
+  hyperlinks                    = true
+  hyperlinks-file-link-format   = "vscode://file/{path}:{line}" # TODO: configure for nvim
+[delta "decorations"]
   hunk-header-style             = file line-number syntax
   hunk-header-decoration-style  = "#d8a657" box
   hunk-header-file-style        = "#ddc7a1"
   hunk-header-line-number-style = "#ddc7a1"
   file-style                    = "#d4be98" bold
-  file-decoration-style         = "#e78a4e" ul box
+  file-decoration-style         = "#e78a4e" ul box bold
   commit-style                  = omit
-  navigate                      = true
-  side-by-side                  = true
-  true-color                    = always
-  hyperlinks                    = true
   plus-style                    = syntax "#34381b"
-  plus-emph-style               = syntax "#3b4439"
+  plus-emph-style               = syntax "#646a47"
   minus-style                   = syntax "#402120"
-  minus-emph-style              = syntax "#4f422e"
+  minus-emph-style              = syntax "#705350"
   zero-style                    = syntax
-  whitespace-error-style        = "magenta reverse"
-  map-styles                    =        \
-       bold red     => syntax "#ea6962", \
-       bold green   => syntax "#a9b665", \
-       bold yellow  => syntax "#d8a657", \
-       bold blue    => syntax "#7daea3", \
-       bold magenta => syntax "#d3869b", \
-       bold cyan    => syntax "#89b482", \
-  hyperlinks-file-link-format   = "vscode://file/{path}:{line}" # TODO: configure for nvim
   file-added-label              = [+]
   file-copied-label             = [==]
   file-modified-label           = [*]
   file-removed-label            = [-]
   file-renamed-label            = [->]
-  line-numbers                  = true
-  line-numbers-left-format      = "{nm:>1}┊"
-  line-numbers-left-style       = red
-  line-numbers-right-format     = "{np:>1}┊"
-  line-numbers-right-style      = green
+[delta "line-numbers"]
+  line-numbers              = true
+  line-numbers-minus-style  = red
+  line-numbers-left-style   = red
+  line-numbers-left-format  = "{nm:>4}┊ "
+  line-numbers-plus-style   = green
+  line-numbers-right-style  = green
+  line-numbers-right-format = "{np:>4}┊ "
 
-[color]
-  ui = auto
-
-[interactive]
-  diffFilter = delta --color-only
-
-[init]
-  defaultBranch = main
-
-[merge]
-  conflictstyle = diff3
-
-[push]
-  autoSetupRemote = true
-
-[pull]
-  rebase = true
-
-[diff]
-  colorMoved = default
-
-[stash]
-	showDiff  = true
-	showPatch = true
-
-[help]
-  autocorrect = 1
-
+# TODO: optimize these aliases
 [alias]
+  # List available aliases
+  aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
   # log
   l    = log
+  # TODO: command for logging only the last k=3 commits
+  # TODO: command for a fzf view over commits
   lol  = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
   lola = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all
   lols = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat
@@ -98,55 +149,53 @@
   aap = add --all --patch
   aau = add --all --update
   # branch
-  b   = branch
-  ba  = branch --all
-  bd  = branch --delete
-  bdf = branch --delete --force
-  bm  = branch --move
-  bn  = branch --no-merged
-  br  = branch --remote
+  br   = branch
+  bra  = branch --all
+  brd  = branch --delete
+  brdf = branch --delete --force
+  brm  = branch --move
+  brn  = branch --no-merged
+  brr  = branch --remote
   # checkout
-  co = checkout
-  cb = checkout -b
+  co  = checkout
+  cob = checkout -b
   # diff
-  d  = diff
-  ds = diff --staged
-  dH = diff HEAD
+  di  = diff
+  dis = diff --staged
+  diH = diff HEAD
   # cherry-pick
   cp  = cherry-pick
   cpa = cherry-pick --abort
   cpc = cherry-pick --continue
   # clean
-  ; cl  = clean
-  ; clx = clean -x
+  cle  = clean
+  clex = clean -x
   # clone
-  cl = clone
+  clo = clone
   # commit
-  c     = commit --verbose
-  ca    = commit --verbose --all
-  cm    = commit --verbose --message
-  cam   = commit --verbose --all --message
-  cane  = commit --verbose --amend --no-edit
-  caane = commit --verbose --amend --all --no-edit
+  cm    = commit --verbose
+  cma   = commit --verbose --all
+  cmm   = commit --verbose --message
+  cmam  = commit --verbose --all --message
+  cman  = commit --verbose --amend --no-edit
+  cmaan = commit --verbose --amend --all --no-edit
   # fetch
-  f = fetch
+  fet = fetch
   # init
-  i = init
+  in = init
   # merge
-  m  = merge
-  ma = merge --abort
-  mc = merge --continue
+  mer  = merge
+  mera = merge --abort
+  merc = merge --continue
   # pull
-  pl   = pull
-  plv  = pull --verbose
+  pl   = pull --verbose
   plr  = pull --rebase --verbose
   plra = pull --rebase --verbose --autostash
   # push
-  ps     = push
-  psd    = push --dry-run
-  psf    = push --force-with-lease --force-if-includes
-  pssupo = push --set-upstream origin $(git_current_branch)
-  psod   = push origin --delete
+  ps    = push
+  psdry = push --dry-run
+  psfor = push --force-with-lease --force-if-includes
+  psdel = push origin --delete
   # rebase
   rb  = rebase
   rba = rebase --abort
@@ -155,17 +204,17 @@
   rbs = rebase --skip
   rbm = rebase $(git_main_branch)
   # remote
-  rv   = remote --verbose
-  ra   = remote add
-  rrm  = remote remove
-  rmv  = remote rename
-  rset = remote set-url
-  rup  = remote update
+  rem    = remote --verbose
+  rema   = remote add
+  remrm  = remote remove
+  remmv  = remote rename
+  remset = remote set-url
+  remup  = remote update
   # reset
   res  = reset
   resH = reset HEAD
   # restore
-  rs = restore --staged
+  resto = restore --staged
   # rm
   rmc = rm --cached -rf
   # show

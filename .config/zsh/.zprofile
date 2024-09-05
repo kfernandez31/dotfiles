@@ -1,7 +1,7 @@
 # TODO: should I put this file in .gitignore?
 
 # Rust
-. "$CARGO_HOME"/env
+source "$CARGO_HOME"/env
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"

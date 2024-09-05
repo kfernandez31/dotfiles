@@ -1,44 +1,51 @@
-# iterm2
-.config/iterm2/AppSupport
-.config/iterm2/sockets
+# restrict the work tree to .config + some other files
+*
+!.config
+!.zshenv
+!README.md
 
-# zsh
-.config/zsh/.zsh_sessions
-
-# raycast
-.config/raycast
-
-# nvim
-# TODO: remove
+# excluded apps
 .config/nvim
-
-# spicetify
-.config/spicetify/Backup
-.config/spicetify/CustomApps
-.config/spicetify/Extensions
-.config/spicetify/Extracted
-.config/spicetify/config-xpui.ini
-
-# tmux
-.config/tmux/plugins
-
-# TODO: test
-# .config/spicetify/*
-# !.config/spicetify/Themes
-# .config/spicetify/Themes/*
-# !.config/spicetify/Themes/text
-# .config/spicetify/Themes/text/*
-# !.config/spicetify/Themes/text/color.ini
-# !.config/spicetify/Themes/text/user.css
-
-# nnn
-.config/nnn/bookmarks
-.config/nnn/mounts
-.config/nnn/sessions
-
-# work
-# TODO: remove
+.config/raycast
+.config/nnn
 .config/mise
 .config/brazil
 .config/cr
 .config/torch
+
+# iterm2
+.config/iterm2/*
+!.config/iterm2/themes
+!.config/iterm2/Default.json
+
+# thefuck
+.config/thefuck/*
+!.config/thefuck/rules
+!.config/thefuck/settings.py
+
+# zsh
+.config/zsh/.zsh_sessions
+.config/zsh/.zprofile
+
+# tmux
+.config/tmux/plugins
+
+# spicetify
+
+# TODO: remove
+# .config/spicetify/*
+# .config/spicetify/Backup
+# .config/spicetify/CustomApps
+# .config/spicetify/Extensions
+# .config/spicetify/Extracted
+# .config/spicetify/config-xpui.ini
+
+# TODO: test
+.config/spicetify/*
+!.config/spicetify/Themes
+.config/spicetify/Themes/*
+!.config/spicetify/Themes/text
+.config/spicetify/Themes/text/*
+!.config/spicetify/Themes/text/color.ini
+!.config/spicetify/Themes/text/user.css
+

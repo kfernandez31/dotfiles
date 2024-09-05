@@ -47,7 +47,7 @@ yabai -m config                          \
     external_bar all:48:0
 
 # exclude apps from tiling
-yabai -m rule --add app="^(Cisco.*|Shottr|Preview|Raycast|System Settings|System Information|Activity Monitor|Calculator|TinkerTool|Progressive Downloader|TinkerTool|Font Book|ProtonVPN|MediaMate)$" manage=off
+yabai -m rule --add app="^(Cisco.*|Shottr|Raycast|System Settings|System Information|Activity Monitor|Calculator|TinkerTool|Progressive Downloader|TinkerTool|Font Book|ProtonVPN|MediaMate)$" manage=off
 
 # trigger sketchybar action on window event
 yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"

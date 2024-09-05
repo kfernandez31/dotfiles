@@ -1,0 +1,7 @@
+#!/bin/sh
+
+bindkey -e # Emacs
+bindkey '^[w'  kill-region
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey "\e[3;3~" $'\e\x7f'
