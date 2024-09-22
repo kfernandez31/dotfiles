@@ -1,0 +1,22 @@
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export HISTSIZE=9223372036854775807
+export HISTFILESIZE=$HISTSIZE
+export SAVEHIST=$HISTSIZE
+
+hist_opts=(
+    append_history         # append to histfile instead of overwriting it
+    share_history          # share history between sessions
+    hist_ignore_space      # ignore commands prepended by a space
+    hist_ignore_all_dups   # remove oldest duplicates once history reaches its max size
+    hist_expire_dups_first # remove duplicates once history reaches its max size
+    hist_save_no_dups      # don't save duplicates
+    hist_ignore_dups       # don't duplicate previous entry
+    hist_find_no_dups      # don't display duplicates, even if they aren't contiguous
+    hist_reduce_blanks     # reduce whitespace in history entries
+    bang_hist              # call previous command
+    # extended_history     # will record timestamp # TODO: take that into account in fzf
+)
+
+for opt in "${hist_opts[@]}"; do
+    setopt "$opt"
+done

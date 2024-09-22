@@ -1,8 +1,18 @@
+romkatv/powerlevel10k
+romkatv/zsh-defer
 Aloxaf/fzf-tab
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 hlissner/zsh-autopair
-romkatv/powerlevel10k
-romkatv/zsh-defer
+ohmyzsh/ohmyzsh path:plugins/sudo
+ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/alias-finder
+ohmyzsh/ohmyzsh path:plugins/command-not-found
+ohmyzsh/ohmyzsh path:plugins/copypath
+ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
+# wfxr/forgit                                # TODO: learn, more: https://gist.github.com/junegunn/f4fca918e937e6bf5bad
+# jeffreytse/zsh-vi-mode                     # TODO: learn
+# zdharma-continuum/fast-syntax-highlighting # TODO: use when it no longer breaks word-jumping
+# JanDeDobbeleer/oh-my-posh                  # TODO: use instead of p10k

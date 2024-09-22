@@ -1,0 +1,18 @@
+setopt dotglob              # Make * expand into hidden files too
+setopt extendedglob         # Use more globs, eg. ^,#,~
+setopt autocd               # cd to a folder just by typing its name
+setopt interactive_comments # Allow # comments in shell
+setopt prompt_subst         # Enables parameter expansion, command substitution, and arithmetic expansion in the prompt string
+setopt pushd_ignore_dups    # Prevents duplicate directories from being added to the directory stack
+# setopt complete_in_word   # cd /ho/sco/tm<TAB> expands to /home/scott/tmp # FIXME
+# setopt pushdminus         # swaps the meaning of cd +1 and cd -1 # TODO: do I need it?
+# setopt promptsubst        # TODO: do I need it?
+# setopt bad_pattern        # TODO: do I need it?
+# setopt check_jobs
+# setopt case_glob
+# setopt ignore_eof
+# setopt list_ambiguous
+# setopt list_beep
+# setopt list_packed
+# setopt list_rows_first
+# setopt list_types

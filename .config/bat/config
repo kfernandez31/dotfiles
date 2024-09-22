@@ -1,4 +1,4 @@
 --theme="gruvbox-material-dark"
---style=changes,numbers,snip
+--style=changes,numbers,snip,header-filename
 --pager="less --RAW-CONTROL-CHARS --quit-if-one-screen --mouse"
 --tabs=4

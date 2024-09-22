@@ -7,7 +7,7 @@ options=(
 	width=4.5
 	hidpi=on
 	ax_focus=on
-	active_color="$COLOR_CYAN"
+	active_color="$COLOR_GREEN"
 	inactive_color="$COLOR_BG_1"
 	background_color="$COLOR_BG_DIM"
 )

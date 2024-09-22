@@ -1,7 +1,10 @@
-#!/bin/sh
+# Set word delimeters for better navigation: alt+{arrows,delete}
+autoload -U select-word-style && select-word-style bash
 
+# Keybinds
 bindkey -e # Emacs
 bindkey '^[w'  kill-region
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey "\e[3;3~" $'\e\x7f'
+bindkey "\e[3;3~" $'\e\x7f' # kill delimited word backwards
+# bindkey ' '  magic-space # TODO: do I need this?

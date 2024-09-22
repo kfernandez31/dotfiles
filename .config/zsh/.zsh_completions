@@ -1,0 +1,44 @@
+# Directory completions
+autoload -Uz compinit && compinit -i -d "${XDG_CACHE_HOME:-$HOME/.cache}"/zsh/zcompdump
+_comp_options+=(globdots) # Include hidden files
+
+# Shell utility completions
+completions=(
+    # "thefuck --alias --enable-experimental-instant-mode"  # Commented out due to massively increasing startup time
+    "zoxide init zsh"
+    "fzf --zsh"
+    "procs --gen-completion-out zsh"
+    "delta --generate-completion zsh"
+    "cat $HOME/.brazil_completion/zsh_completion"
+    "cat ${ZDOTDIR:-$HOME/.config/zsh}/.iterm2_shell_integration.zsh || cat <(curl -s https://iterm2.com/shell_integration/zsh)"
+)
+for cmd in "${completions[@]}"; do
+    eval "$(eval $cmd)"
+done
+
+# Completion settings
+
+# TODO: improve in general
+# see: https://jeffry.in/lightweight-intelligent-completion-in-zsh
+
+# TODO: improve colors (eg. git) and toggle preview based on cmd
+
+zstyle ':completion:**' use-cache on
+zstyle ':completion:**' cache-path  "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompcache"
+zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*:descriptions' format '[%d]'
+
+export LS_COLORS="$(vivid generate ${XDG_CONFIG_HOME:-$HOME/.config}/vivid/gruvbox-material.yml)"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Fzf-tab
+zstyle ':completion:*' menu no # don't use zsh's native completion menu
+zstyle ':fzf-tab:complete:*' fzf-preview \
+   '[[ -d $realpath ]] && { echo "       Directory: \e[1m$(basename "$realpath")\e[0m" && eza $(<$EZA_DEFAULT_OPTS_FILE) -1a --color=always --ignore-glob ".DS_Store|.idea|.vscode" $realpath } || bat --color=always $realpath'
+zstyle ':fzf-tab:complete:*' fzf-flags                                                                                 \
+    --height=40%                                                                                                       \
+    --preview-window=right:60%:wrap:cycle:border-double                                                                \
+    --bind="tab:toggle-down"                                                                                           \
+    --bind="ctrl-p:change-preview-window(down,90%,wrap,cycle,border-double|hidden|right,50%,wrap,cycle,border-double)" \
+    --bind="ctrl-v:execute(bat --paging=always --color=always {+})"

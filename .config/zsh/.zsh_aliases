@@ -14,7 +14,6 @@ alias less='bat --paging=always'
 alias find='fd'
 alias grep='rg'
 
-
 # Additional flags
 alias rm='rm -iv'
 alias cp='cp -riv'
@@ -31,8 +30,9 @@ alias ffmpeg='ffmpeg -hide_banner'
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 
 # Shorthands
+alias cmd='command'
 alias loc='scc'
-alias ka='killall'
+alias ka='killall' # TODO: pgrep and the like too
 alias g='git'
 alias c='clear -x'
 alias md='mkdir'
@@ -46,10 +46,10 @@ alias yta='yt -x -f bestaudio/best'
 alias fk='fuck'
 
 # ls TODO: remove once eza adds supports a config file (see: https://github.com/eza-community/eza/pull/840)
-EZA_BASE_CMD="eza $(tr -s '\n' ' ' < $EZA_DEFAULT_OPTS_FILE)"
+EZA_BASE_CMD="eza $(tr -s '\n' ' ' <$EZA_DEFAULT_OPTS_FILE)"
 alias l="$EZA_BASE_CMD"
-alias l1="$EZA_BASE_CMD   -1"
 alias ls="$EZA_BASE_CMD"
+alias l1="$EZA_BASE_CMD   -1"
 alias ls1="$EZA_BASE_CMD  -1"
 alias la="$EZA_BASE_CMD   -a"
 alias l1a="$EZA_BASE_CMD  -1a"
@@ -57,21 +57,24 @@ alias ll="$EZA_BASE_CMD   -l"
 alias lla="$EZA_BASE_CMD  -la"
 alias lt1="$EZA_BASE_CMD  -T --level=1"
 alias lta1="$EZA_BASE_CMD -T --level=1 -a"
+alias lt1a=lta1
 alias lt2="$EZA_BASE_CMD  -T --level=2"
 alias lta2="$EZA_BASE_CMD -T --level=2 -a"
-alias lt2="$EZA_BASE_CMD  -T --level=2"
-alias lta2="$EZA_BASE_CMD -T --level=2 -a"
+alias lt2a=lta2
 alias lt3="$EZA_BASE_CMD  -T --level=3"
 alias lta3="$EZA_BASE_CMD -T --level=3 -a"
+alias lt3a=lta3
 alias lt4="$EZA_BASE_CMD  -T --level=4"
 alias lta4="$EZA_BASE_CMD -T --level=4 -a"
+alias lt4a=lta4
 
 # tmux
-alias t='tmux attach || tmux new-session'
+alias t='tmux attach tmux || tmux new-session -s tmux'
 alias ta='tmux attach -t'
 alias tn='tmux new -s'
-alias tk='tmux kill-session -t'
-alias tl='tmux list-sessions'
+alias tks='tmux kill-session -t'
+alias tka='tmux kill-server'
+alias tls='tmux list-sessions'
 
 # Navigation
 alias ..='cd ..'
@@ -79,9 +82,16 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
+alias .........='cd ../../../../../../../..'
+alias ..........='cd ../../../../../../../../..'
 
-# Dotfiles
-alias cfg="$(which git) --git-dir=$DOTFILES_HOME --work-tree=$HOME"
+# Extras
+alias zbench="hyperfine 'zsh -lic exit' --warmup 2 --runs 30"
+
+# Dotfiles # TODO: remove (and migrate to stow)
+alias dots="$(which git) --git-dir=$DOTFILES_HOME --work-tree=$HOME"
 
 # Vim
-[ -x "$(command -v nvim)" ] && alias vi='nvim' vim='nvim' vimdiff='nvim -d'
+[ -x "$(command -v nvim)" ] && alias code='nvim' vi='nvim' vim='nvim' vimdiff='nvim -d'
